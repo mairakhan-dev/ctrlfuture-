@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CTRL+FUTURE — Student Tech Conference</title>
+
+    <!-- Primary Meta Tags -->
+    <title>CTRL+FUTURE — Student Tech Conference 2026 | Learn Future-Ready Skills</title>
+    <meta name="description" content="CTRL+FUTURE is a student-led online tech conference for school and college students across Pakistan. Learn AI, Web Dev, UI/UX, Freelancing, and more from industry experts. Register now to support TCF." />
+    <meta name="keywords" content="tech conference, students, Pakistan, online, AI, web development, UI/UX, freelancing, Flutter, personal branding, TCF" />
+    <link rel="canonical" href="https://www.ctrlfuture.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ctrlfuture.com/" />
+    <meta property="og:title" content="CTRL+FUTURE — Student Tech Conference 2026" />
+    <meta property="og:description" content="Learn future-ready skills from industry professionals. Online, 7 sessions, digital certificates. Supporting TCF." />
+    <meta property="og:image" content="https://www.ctrlfuture.com/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.ctrlfuture.com/" />
+    <meta property="twitter:title" content="CTRL+FUTURE — Student Tech Conference 2026" />
+    <meta property="twitter:description" content="Learn future-ready skills from industry professionals. Online, 7 sessions, digital certificates. Supporting TCF." />
+    <meta property="twitter:image" content="https://www.ctrlfuture.com/og-image.jpg" />
+
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 
     <!-- Google Fonts: Poppins + Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,6 +38,33 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest">
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "CTRL+FUTURE Tech Conference 2026",
+            "startDate": "2026-08-01T18:00",
+            "endDate": "2026-08-07T21:00",
+            "location": {
+                "@type": "VirtualLocation",
+                "url": "https://meet.google.com/"
+            },
+            "description": "A one-week online tech event for students in Pakistan, covering AI, web dev, UI/UX, freelancing, startups, Flutter, and personal branding.",
+            "offers": {
+                "@type": "Offer",
+                "price": "499",
+                "priceCurrency": "PKR",
+                "availability": "https://schema.org/LimitedAvailability"
+            },
+            "organizer": {
+                "@type": "Organization",
+                "name": "CTRL+FUTURE",
+                "url": "https://www.ctrlfuture.com/"
+            }
+        }
     </script>
 
     <!-- Custom Styles -->
@@ -77,6 +126,55 @@
             background-clip: text;
         }
 
+        /* ----- logo styles ----- */
+        .logo-ctrlfuture {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .logo-ctrlfuture .logo-top {
+            display: flex;
+            align-items: baseline;
+            gap: 0.1rem;
+        }
+        .logo-ctrlfuture .logo-ctrl {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #111827;
+            letter-spacing: -0.02em;
+        }
+        .logo-ctrlfuture .logo-plus {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #7C3AED;
+        }
+        .logo-ctrlfuture .logo-future {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7C3AED 0%, #22C55E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+        .logo-ctrlfuture .logo-tagline {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: #6b7280;
+            margin-top: -0.1rem;
+            text-transform: uppercase;
+        }
+        /* footer logo bigger */
+        .footer-logo .logo-ctrl,
+        .footer-logo .logo-plus,
+        .footer-logo .logo-future {
+            font-size: 2rem;
+        }
+        .footer-logo .logo-tagline {
+            font-size: 0.8rem;
+        }
+
         /* ----- buttons ----- */
         .btn-primary {
             background: #7C3AED;
@@ -91,11 +189,28 @@
             border: none;
             cursor: pointer;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .btn-primary:hover::after {
+            opacity: 1;
         }
         .btn-primary:hover {
             background: #6D28D9;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px -8px rgba(124, 58, 237, 0.4);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 16px 40px -8px rgba(124, 58, 237, 0.45);
         }
 
         .btn-outline {
@@ -132,14 +247,31 @@
             border: none;
             cursor: pointer;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-green::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .btn-green:hover::after {
+            opacity: 1;
         }
         .btn-green:hover {
             background: #16A34A;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px -8px rgba(34, 197, 94, 0.4);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 16px 40px -8px rgba(34, 197, 94, 0.45);
         }
 
-        /* ----- card hover ----- */
+        /* ----- card hover with glow ----- */
         .card-hover {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
@@ -159,7 +291,7 @@
             transform: translateY(0);
         }
 
-        /* ----- sticky nav ----- */
+        /* ----- sticky nav with blur ----- */
         .nav-sticky {
             transition: all 0.3s ease;
         }
@@ -304,6 +436,14 @@
             .hero-illustration {
                 margin-top: 2rem;
             }
+            .logo-ctrlfuture .logo-ctrl,
+            .logo-ctrlfuture .logo-plus,
+            .logo-ctrlfuture .logo-future {
+                font-size: 1.3rem;
+            }
+            .logo-ctrlfuture .logo-tagline {
+                font-size: 0.55rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -343,7 +483,7 @@
             }
         }
 
-        /* floating shapes */
+        /* floating shapes with subtle rotation */
         .float-shape {
             animation: float 6s ease-in-out infinite;
         }
@@ -363,7 +503,22 @@
             }
         }
 
-        /* shimmer for cards */
+        /* glow animation for hero background */
+        .hero-glow {
+            animation: glowPulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes glowPulse {
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.9;
+                transform: scale(1.1);
+            }
+        }
+
+        /* shimmer for "coming soon" */
         .shimmer {
             background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
         }
@@ -373,6 +528,28 @@
             background: #7C3AED;
             color: #fff;
         }
+
+        /* session icon hover scale */
+        .session-icon {
+            transition: transform 0.3s ease;
+        }
+        .card-hover:hover .session-icon {
+            transform: scale(1.15) rotate(-4deg);
+        }
+
+        /* speaker image placeholder gradient animation */
+        .speaker-img-placeholder {
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover .speaker-img-placeholder {
+            background: linear-gradient(135deg, #d1d5db 0%, #b0b8c4 100%);
+        }
+
+        /* smooth scroll offset for fixed nav */
+        .scroll-offset {
+            scroll-margin-top: 80px;
+        }
     </style>
 </head>
 <body>
@@ -380,11 +557,15 @@
     <!-- ============================================================ -->
     <!-- STICKY NAVIGATION                                            -->
     <!-- ============================================================ -->
-    <header class="nav-sticky fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 transition-all duration-300">
+    <header class="nav-sticky fixed top-0 left-0 w-full z-50 py-3 px-6 md:px-12 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-2 text-xl font-bold font-poppins tracking-tight">
-                <span class="text-black">CTRL+</span><span class="gradient-text">FUTURE</span>
+            <a href="#" class="logo-ctrlfuture" aria-label="CTRL+FUTURE home">
+                <div class="logo-top">
+                    <span class="logo-ctrl">CTRL</span><span class="logo-plus">+</span>
+                    <span class="logo-future">FUTURE</span>
+                </div>
+                <span class="logo-tagline">BUILDWHAT'SNEXT.</span>
             </a>
 
             <!-- Desktop Nav -->
@@ -402,7 +583,7 @@
                 <a href="https://forms.gle/Xi5LDBCRbNnD5Bhi6" target="_blank" class="hidden md:inline-block btn-primary text-sm py-2 px-5">
                     Register
                 </a>
-                <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#7C3AED] transition" aria-label="Toggle menu">
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#7C3AED] transition" aria-label="Toggle menu" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -427,10 +608,10 @@
     <!-- ============================================================ -->
     <!-- HERO SECTION                                                 -->
     <!-- ============================================================ -->
-    <section id="hero" class="pt-32 pb-20 px-6 md:px-12 relative overflow-hidden">
-        <!-- Background decorative shapes -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl -z-10"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-green-100/20 rounded-full blur-3xl -z-10"></div>
+    <section id="hero" class="pt-32 pb-20 px-6 md:px-12 relative overflow-hidden scroll-offset">
+        <!-- Animated background glow -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl -z-10 hero-glow"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-green-100/20 rounded-full blur-3xl -z-10 hero-glow" style="animation-delay: 2s;"></div>
 
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Content -->
@@ -477,7 +658,7 @@
 
             <!-- Right Illustration (animated SVG) -->
             <div class="hero-illustration flex justify-center lg:justify-end">
-                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md lg:max-w-lg">
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md lg:max-w-lg" aria-hidden="true">
                     <!-- Background shapes -->
                     <circle cx="400" cy="60" r="40" fill="#7C3AED" opacity="0.08" class="float-shape" />
                     <circle cx="80" cy="340" r="50" fill="#22C55E" opacity="0.08" class="float-shape" />
@@ -538,7 +719,7 @@
     <!-- ============================================================ -->
     <!-- ABOUT + STATS                                                -->
     <!-- ============================================================ -->
-    <section id="about" class="py-20 px-6 md:px-12 bg-gray-50/60">
+    <section id="about" class="py-20 px-6 md:px-12 bg-gray-50/60 scroll-offset">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 reveal">
@@ -581,7 +762,7 @@
     <!-- ============================================================ -->
     <!-- SESSIONS (7 cards)                                           -->
     <!-- ============================================================ -->
-    <section id="sessions" class="py-20 px-6 md:px-12">
+    <section id="sessions" class="py-20 px-6 md:px-12 scroll-offset">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-14 reveal">
                 <span class="text-sm font-semibold text-[#7C3AED] uppercase tracking-wider">Topics</span>
@@ -592,7 +773,7 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- Card 1 -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4">🤖</div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4 session-icon">🤖</div>
                     <h3 class="font-bold font-poppins text-lg">Artificial Intelligence</h3>
                     <p class="text-gray-500 text-sm mt-1 leading-relaxed">Practical AI Tools &amp; Prompt Engineering</p>
                     <div class="mt-4 text-xs font-medium text-gray-400 flex items-center gap-1.5">
@@ -603,7 +784,7 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal">
-                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-2xl mb-4">💻</div>
+                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-2xl mb-4 session-icon">💻</div>
                     <h3 class="font-bold font-poppins text-lg">Build Your First Website</h3>
                     <p class="text-gray-500 text-sm mt-1 leading-relaxed">Modern Web Development</p>
                     <div class="mt-4 text-xs font-medium text-gray-400 flex items-center gap-1.5">
@@ -614,7 +795,7 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4">🎨</div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4 session-icon">🎨</div>
                     <h3 class="font-bold font-poppins text-lg">Design That Stands Out</h3>
                     <p class="text-gray-500 text-sm mt-1 leading-relaxed">UI/UX &amp; Figma Essentials</p>
                     <div class="mt-4 text-xs font-medium text-gray-400 flex items-center gap-1.5">
@@ -625,7 +806,7 @@
 
                 <!-- Card 4 -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal">
-                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-2xl mb-4">📱</div>
+                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-2xl mb-4 session-icon">📱</div>
                     <h3 class="font-bold font-poppins text-lg">Flutter App Development</h3>
                     <p class="text-gray-500 text-sm mt-1 leading-relaxed">Cross-platform mobile apps</p>
                     <div class="mt-4 text-xs font-medium text-gray-400 flex items-center gap-1.5">
@@ -636,7 +817,7 @@
 
                 <!-- Card 5 -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4">💼</div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4 session-icon">💼</div>
                     <h3 class="font-bold font-poppins text-lg">Freelancing 101</h3>
                     <p class="text-gray-500 text-sm mt-1 leading-relaxed">Start your freelance career</p>
                     <div class="mt-4 text-xs font-medium text-gray-400 flex items-center gap-1.5">
@@ -647,7 +828,7 @@
 
                 <!-- Card 6 -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal">
-                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-2xl mb-4">🌟</div>
+                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-2xl mb-4 session-icon">🌟</div>
                     <h3 class="font-bold font-poppins text-lg">Personal Branding &amp; LinkedIn</h3>
                     <p class="text-gray-500 text-sm mt-1 leading-relaxed">Build your professional presence</p>
                     <div class="mt-4 text-xs font-medium text-gray-400 flex items-center gap-1.5">
@@ -658,7 +839,7 @@
 
                 <!-- Card 7 -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4">🚀</div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl mb-4 session-icon">🚀</div>
                     <h3 class="font-bold font-poppins text-lg">From Idea to Startup</h3>
                     <p class="text-gray-500 text-sm mt-1 leading-relaxed">Launch your own venture</p>
                     <div class="mt-4 text-xs font-medium text-gray-400 flex items-center gap-1.5">
@@ -673,7 +854,7 @@
     <!-- ============================================================ -->
     <!-- SPEAKERS                                                     -->
     <!-- ============================================================ -->
-    <section id="speakers" class="py-20 px-6 md:px-12 bg-gray-50/60">
+    <section id="speakers" class="py-20 px-6 md:px-12 bg-gray-50/60 scroll-offset">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-14 reveal">
                 <span class="text-sm font-semibold text-[#7C3AED] uppercase tracking-wider">Speakers</span>
@@ -684,14 +865,14 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- Speaker 1: Mohammad Usman Ali -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center card-hover reveal">
-                    <div class="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center text-3xl font-bold text-purple-700 mb-4">
+                    <div class="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center text-3xl font-bold text-purple-700 mb-4 speaker-img-placeholder">
                         UA
                     </div>
                     <h3 class="font-bold font-poppins text-lg">Mohammad Usman Ali</h3>
                     <p class="text-sm text-[#7C3AED] font-medium">Software Engineer</p>
                     <p class="text-xs text-gray-500">Devsinc</p>
                     <p class="text-xs text-gray-600 mt-2 font-medium bg-gray-100 rounded-full px-3 py-1 inline-block">Personal Branding, LinkedIn &amp; Career</p>
-                    <a href="https://www.linkedin.com/in/UsmanAli90" target="_blank" class="inline-flex items-center gap-1.5 mt-3 text-sm text-[#7C3AED] font-medium hover:underline">
+                    <a href="https://www.linkedin.com/in/UsmanAli90" target="_blank" class="inline-flex items-center gap-1.5 mt-3 text-sm text-[#7C3AED] font-medium hover:underline" aria-label="LinkedIn profile of Mohammad Usman Ali">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#0A66C2]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         LinkedIn
                     </a>
@@ -699,29 +880,29 @@
 
                 <!-- Speaker 2: Momin Qaisar -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center card-hover reveal">
-                    <div class="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-3xl font-bold text-green-700 mb-4">
+                    <div class="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-3xl font-bold text-green-700 mb-4 speaker-img-placeholder">
                         MQ
                     </div>
                     <h3 class="font-bold font-poppins text-lg">Momin Qaisar</h3>
                     <p class="text-sm text-[#22C55E] font-medium">GenAI Creator</p>
                     <p class="text-xs text-gray-500">—</p>
                     <p class="text-xs text-gray-600 mt-2 font-medium bg-gray-100 rounded-full px-3 py-1 inline-block">Topic: Coming Soon</p>
-                    <a href="https://www.linkedin.com/in/mominqaisar/" target="_blank" class="inline-flex items-center gap-1.5 mt-3 text-sm text-[#7C3AED] font-medium hover:underline">
+                    <a href="https://www.linkedin.com/in/mominqaisar/" target="_blank" class="inline-flex items-center gap-1.5 mt-3 text-sm text-[#7C3AED] font-medium hover:underline" aria-label="LinkedIn profile of Momin Qaisar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#0A66C2]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         LinkedIn
                     </a>
                 </div>
 
-                <!-- Speaker 3: Maira Khan (NEW) -->
+                <!-- Speaker 3: Maira Khan -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center card-hover reveal">
-                    <div class="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center text-3xl font-bold text-pink-700 mb-4">
+                    <div class="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center text-3xl font-bold text-pink-700 mb-4 speaker-img-placeholder">
                         MK
                     </div>
                     <h3 class="font-bold font-poppins text-lg">Maira Khan</h3>
                     <p class="text-sm text-[#7C3AED] font-medium">—</p>
                     <p class="text-xs text-gray-500">—</p>
                     <p class="text-xs text-gray-600 mt-2 font-medium bg-gray-100 rounded-full px-3 py-1 inline-block">Topic: Coming Soon</p>
-                    <a href="https://www.linkedin.com/in/maira-khan-2936b93aa" target="_blank" class="inline-flex items-center gap-1.5 mt-3 text-sm text-[#7C3AED] font-medium hover:underline">
+                    <a href="https://www.linkedin.com/in/maira-khan-2936b93aa" target="_blank" class="inline-flex items-center gap-1.5 mt-3 text-sm text-[#7C3AED] font-medium hover:underline" aria-label="LinkedIn profile of Maira Khan">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#0A66C2]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         LinkedIn
                     </a>
@@ -729,7 +910,7 @@
 
                 <!-- Speaker 4: Coming Soon -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center card-hover reveal opacity-60">
-                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4">?</div>
+                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4 speaker-img-placeholder">?</div>
                     <h3 class="font-bold font-poppins text-lg text-gray-400">Coming Soon</h3>
                     <p class="text-sm text-gray-400 font-medium">—</p>
                     <p class="text-xs text-gray-400">—</p>
@@ -738,7 +919,7 @@
 
                 <!-- Speaker 5: Coming Soon -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center card-hover reveal opacity-60">
-                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4">?</div>
+                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4 speaker-img-placeholder">?</div>
                     <h3 class="font-bold font-poppins text-lg text-gray-400">Coming Soon</h3>
                     <p class="text-sm text-gray-400 font-medium">—</p>
                     <p class="text-xs text-gray-400">—</p>
@@ -747,7 +928,7 @@
 
                 <!-- Speaker 6: Coming Soon -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center card-hover reveal opacity-60">
-                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4">?</div>
+                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4 speaker-img-placeholder">?</div>
                     <h3 class="font-bold font-poppins text-lg text-gray-400">Coming Soon</h3>
                     <p class="text-sm text-gray-400 font-medium">—</p>
                     <p class="text-xs text-gray-400">—</p>
@@ -756,7 +937,7 @@
 
                 <!-- Speaker 7: Coming Soon -->
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center card-hover reveal opacity-60">
-                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4">?</div>
+                    <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-3xl text-gray-400 mb-4 speaker-img-placeholder">?</div>
                     <h3 class="font-bold font-poppins text-lg text-gray-400">Coming Soon</h3>
                     <p class="text-sm text-gray-400 font-medium">—</p>
                     <p class="text-xs text-gray-400">—</p>
@@ -774,7 +955,7 @@
     <!-- ============================================================ -->
     <!-- SCHEDULE (timeline)                                          -->
     <!-- ============================================================ -->
-    <section id="schedule" class="py-20 px-6 md:px-12">
+    <section id="schedule" class="py-20 px-6 md:px-12 scroll-offset">
         <div class="max-w-4xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-14 reveal">
                 <span class="text-sm font-semibold text-[#7C3AED] uppercase tracking-wider">Schedule</span>
@@ -894,7 +1075,7 @@
     <!-- ============================================================ -->
     <!-- PRICING / REGISTRATION                                       -->
     <!-- ============================================================ -->
-    <section id="pricing" class="py-20 px-6 md:px-12 bg-gray-50/60">
+    <section id="pricing" class="py-20 px-6 md:px-12 bg-gray-50/60 scroll-offset">
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-14 reveal">
                 <span class="text-sm font-semibold text-[#7C3AED] uppercase tracking-wider">Registration</span>
@@ -1006,7 +1187,7 @@
     <!-- ============================================================ -->
     <!-- FAQ (accordion)                                              -->
     <!-- ============================================================ -->
-    <section id="faq" class="py-20 px-6 md:px-12 bg-gray-50/60">
+    <section id="faq" class="py-20 px-6 md:px-12 bg-gray-50/60 scroll-offset">
         <div class="max-w-3xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-14 reveal">
                 <span class="text-sm font-semibold text-[#7C3AED] uppercase tracking-wider">FAQ</span>
@@ -1075,7 +1256,7 @@
     <!-- ============================================================ -->
     <!-- SUPPORTING TCF                                               -->
     <!-- ============================================================ -->
-    <section id="support" class="py-20 px-6 md:px-12 bg-white">
+    <section id="support" class="py-20 px-6 md:px-12 bg-white scroll-offset">
         <div class="max-w-5xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
@@ -1096,7 +1277,7 @@
                 </div>
 
                 <div class="flex justify-center reveal">
-                    <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-xs">
+                    <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-xs" aria-hidden="true">
                         <!-- Abstract illustration: books + graduation + heart -->
                         <rect x="40" y="140" width="80" height="60" rx="4" fill="#e5e7eb" />
                         <rect x="50" y="130" width="60" height="12" rx="2" fill="#7C3AED" opacity="0.3" />
@@ -1135,8 +1316,12 @@
             <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <!-- Logo & About -->
                 <div class="space-y-3">
-                    <a href="#" class="text-2xl font-bold font-poppins tracking-tight">
-                        <span class="text-white">CTRL+</span><span class="gradient-text">FUTURE</span>
+                    <a href="#" class="logo-ctrlfuture footer-logo" aria-label="CTRL+FUTURE home">
+                        <div class="logo-top">
+                            <span class="logo-ctrl">CTRL</span><span class="logo-plus">+</span>
+                            <span class="logo-future">FUTURE</span>
+                        </div>
+                        <span class="logo-tagline">BUILDWHAT'SNEXT.</span>
                     </a>
                     <p class="text-sm text-white/60 max-w-xs leading-relaxed">
                         Student-led online tech conference bridging classroom learning with real-world skills.
@@ -1208,15 +1393,12 @@
 
             // ---- Sticky Nav ----
             const nav = document.querySelector('.nav-sticky');
-            let lastScroll = 0;
             window.addEventListener('scroll', function() {
-                const currentScroll = window.pageYOffset;
-                if (currentScroll > 40) {
+                if (window.pageYOffset > 40) {
                     nav.classList.add('scrolled');
                 } else {
                     nav.classList.remove('scrolled');
                 }
-                lastScroll = currentScroll;
             });
 
             // ---- Back to Top ----
@@ -1237,11 +1419,9 @@
             const mobileMenu = document.getElementById('mobileMenu');
             menuBtn.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
-                // aria-expanded toggle
                 const expanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
                 menuBtn.setAttribute('aria-expanded', expanded);
             });
-            // Close menu on link click
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', function() {
                     mobileMenu.classList.add('hidden');
@@ -1257,7 +1437,6 @@
                     const answer = document.getElementById(targetId);
                     const icon = this.querySelector('.faq-icon');
 
-                    // Close other open FAQs
                     document.querySelectorAll('.faq-answer.open').forEach(a => {
                         if (a.id !== targetId) {
                             a.classList.remove('open');
@@ -1271,7 +1450,7 @@
                 });
             });
 
-            // ---- Scroll Reveal (Intersection Observer) ----
+            // ---- Scroll Reveal ----
             const revealElements = document.querySelectorAll('.reveal');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1285,7 +1464,7 @@
             });
             revealElements.forEach(el => observer.observe(el));
 
-            // ---- Smooth scroll for anchor links (prevent default) ----
+            // ---- Smooth scroll for anchor links ----
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
@@ -1300,12 +1479,12 @@
                 });
             });
 
-            // ---- Lucide icons init ----
+            // ---- Lucide icons ----
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
 
-            console.log('✨ CTRL+FUTURE — Learn future-ready skills.');
+            console.log('✨ CTRL+FUTURE — Build what\'s next.');
         });
     </script>
 
